@@ -10,6 +10,8 @@ export default function FuturisticPortfolio() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const titles = ["Full-Stack Developer | AI-Augmented Engineer | Product-Minded Builder"]
   const [titleIndex, setTitleIndex] = useState(0)
+  const [isOpen, setIsOpen] = useState(false);
+
 
   useEffect(() => {
     const currentTitle = titles[titleIndex]
@@ -49,25 +51,54 @@ export default function FuturisticPortfolio() {
 
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-black/30 border-b border-purple-500/20">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              {"<Dev/>"}
-            </div>
-            <div className="hidden md:flex space-x-8">
-              {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-gray-300 hover:text-white transition-colors duration-300 hover:glow-text"
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </nav>
+  <div className="max-w-7xl mx-auto px-6 py-4">
+    <div className="flex justify-between items-center">
+      {/* Logo */}
+      <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+        {"<Dev/>"}
+      </div>
+
+      {/* Desktop Menu */}
+      <div className="hidden md:flex space-x-8">
+        {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+          <button
+            key={item}
+            onClick={() => scrollToSection(item.toLowerCase())}
+            className="text-gray-300 hover:text-white transition-colors duration-300 hover:glow-text"
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+
+      {/* Hamburger Icon (Mobile) */}
+      <div className="md:hidden">
+        <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+          {isOpen ? "✖" : "☰"}
+        </button>
+      </div>
+    </div>
+
+    {/* Mobile Dropdown Menu */}
+    {isOpen && (
+      <div className="md:hidden mt-4 flex flex-col space-y-4">
+        {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+          <button
+            key={item}
+            onClick={() => {
+              scrollToSection(item.toLowerCase());
+              setIsOpen(false);
+            }}
+            className="text-gray-300 hover:text-white transition-colors duration-300 hover:glow-text text-left"
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+    )}
+  </div>
+</nav>
+
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center z-10">
