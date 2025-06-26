@@ -118,6 +118,13 @@ export default function FuturisticPortfolio() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="relative">
+              <div className="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-white-500/20 to-cyan-500/20 backdrop-blur-sm border border-purple-500/30 flex items-center justify-center">
+                <img src="/lotchan.jpeg" className="w-80 h-80 mx-auto rounded-full" />
+              </div>
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-cyan-400 rounded-full animate-ping" />
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-400 rounded-full animate-pulse" />
+            </div>
             <div className="space-y-6">
               <div className="p-8 rounded-2xl bg-gradient-to-br from-purple-900/20 to-cyan-900/20 backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300">
                 <p className="text-lg text-gray-300 leading-relaxed">
@@ -141,13 +148,7 @@ experience working with cloud platforms (Vercel, Firebase, Railway).
               </div>
             </div>
 
-            <div className="relative">
-              <div className="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-white-500/20 to-cyan-500/20 backdrop-blur-sm border border-purple-500/30 flex items-center justify-center">
-                <img src="/lotchan.jpeg" className="w-80 h-80 mx-auto rounded-full" />
-              </div>
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-cyan-400 rounded-full animate-ping" />
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-400 rounded-full animate-pulse" />
-            </div>
+            
           </div>
         </div>
       </section>
