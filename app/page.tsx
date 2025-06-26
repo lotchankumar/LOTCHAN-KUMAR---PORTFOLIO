@@ -304,7 +304,7 @@ experience working with cloud platforms (Vercel, Firebase, Railway).
             {[
               { icon: Github, href: "https://github.com/lotchankumar?tab=repositories", label: "GitHub" },
               { icon: Linkedin, href: "https://www.linkedin.com/in/lotchan-kumar/", label: "LinkedIn" },
-              { icon: Mail, href: "mailto:your-email@example.com?subject=Hello Lotchan&body=I loved your portfolio!"
+              { icon: Mail, href: "mailto:lotchansm1612@gamil.com?subject=Hello Lotchan&body=I loved your portfolio!"
               , label: "Email" },
               { icon: PhoneCall, href: "tel:+917092796463", label: "Contact" },
             ].map((social, index) => (
