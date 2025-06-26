@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ChevronDown, Github, Linkedin, Mail,Phone, ExternalLink, Code, Zap, Cpu, Rocket, Database, Cloud, Server, EllipsisIcon } from "lucide-react"
+import { ChevronDown, Github, Linkedin, Mail,Phone, ExternalLink, Code, Zap, Cpu, Rocket, Database, Cloud, Server, EllipsisIcon, PhoneCall } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
@@ -306,7 +306,7 @@ experience working with cloud platforms (Vercel, Firebase, Railway).
               { icon: Linkedin, href: "https://www.linkedin.com/in/lotchan-kumar/", label: "LinkedIn" },
               { icon: Mail, href: "mailto:your-email@example.com?subject=Hello Lotchan&body=I loved your portfolio!"
               , label: "Email" },
-              { icon: Phone, href: "tel:+917092796463", label: "Contact" },
+              { icon: PhoneCall, href: "tel:+917092796463", label: "Contact" },
             ].map((social, index) => (
               <a
                 key={index}
