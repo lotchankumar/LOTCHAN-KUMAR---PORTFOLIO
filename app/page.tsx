@@ -233,14 +233,16 @@ experience working with cloud platforms (Vercel, Firebase, Railway).
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Quantum Dashboard",
-                desc: "Real-time analytics platform with AI insights",
-                tech: ["React", "D3.js", "Node.js"],
+                title: "Stunning Portfolio Website",
+                desc: "A futuristic developer portfolio website with dark mode, neon gradients, glassmorphism, typing effects, and smooth animations",
+                tech: ["Next.js", "Tailwind CSS",],
+                link: "https://lotchan-kumar-portfolio.vercel.app/"
               },
               {
-                title: "Neural Network Viz",
-                desc: "Interactive machine learning visualization tool",
-                tech: ["Three.js", "Python", "TensorFlow"],
+                title: "💼 Daily Profit Tracker",
+                desc: "Real-time mobile shop finance tracker with smart cash flow & division analytics",
+                tech: ["React.js", "Typescript", "Tailwind CSS","Node.js"],
+                link: "https://daily-profit-tracker.vercel.app/"
               },
               {
                 title: "Crypto Tracker Pro",
@@ -269,11 +271,25 @@ experience working with cloud platforms (Vercel, Firebase, Railway).
               >
                 <div className="space-y-4">
                   <div className="flex justify-between items-start">
-                    <h3 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
-                      {project.title}
-                    </h3>
-                    <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors" />
-                  </div>
+  <a
+    href={project.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors"
+  >
+    {project.title}
+  </a>
+  {project.link && (
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors" />
+    </a>
+  )}
+</div>
+
                   <p className="text-gray-400 text-sm">{project.desc}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, techIndex) => (
