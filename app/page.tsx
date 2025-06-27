@@ -229,30 +229,31 @@ experience working with cloud platforms (Vercel, Firebase, Railway).
           <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
             Projects.db
           </h2>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 title: "Stunning Portfolio Website",
                 desc: "A futuristic developer portfolio website with dark mode, neon gradients, glassmorphism, typing effects, and smooth animations",
-                tech: ["Next.js", "Tailwind CSS",],
+                tech: ["Next.js", "Tailwind CSS"],
                 link: "https://lotchan-kumar-portfolio.vercel.app/"
               },
               {
-                title: "💼 Daily Profit Tracker",
+                title: "Daily Profit Tracker",
                 desc: "Real-time mobile shop finance tracker with smart cash flow & division analytics",
-                tech: ["React.js", "Typescript", "Tailwind CSS","Node.js"],
+                tech: ["React.js", "Typescript", "Tailwind CSS", "Node.js"],
                 link: "https://daily-profit-tracker.vercel.app/"
               },
               {
-                title: "Crypto Tracker Pro",
-                desc: "Advanced cryptocurrency portfolio manager",
-                tech: ["Next.js", "GraphQL", "PostgreSQL"],
+                title: "Modern Landing Page",
+                desc: "Landing page for an e-commerce mobile device store.",
+                tech: ["Next.js", "React", "Typescript","Tailwind CSS"],
+                link: "https://cell-corner-landing-page.vercel.app/"
               },
               {
-                title: "AR Shopping App",
-                desc: "Augmented reality e-commerce experience",
-                tech: ["React Native", "ARKit", "Firebase"],
+                title: "To-Do-CRUD App",
+                desc: "To-Do App with CRUD functionality using React.js and TypeScript, demonstrating state management, props, events, and hooks.",
+                tech: ["React.js", "Typescript",],
+                link: "https://todo-crud-app-three.vercel.app/"
               },
               {
                 title: "AI Code Assistant",
@@ -264,43 +265,53 @@ experience working with cloud platforms (Vercel, Firebase, Railway).
                 desc: "Secure decentralized voting platform",
                 tech: ["Solidity", "Web3.js", "IPFS"],
               },
-            ].map((project, index) => (
-              <Card
-                key={index}
-                className="group p-6 bg-gradient-to-br from-purple-900/20 to-cyan-900/20 backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:transform hover:scale-105"
-              >
-                <div className="space-y-4">
-                  <div className="flex justify-between items-start">
-  <a
-    href={project.link}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors"
-  >
-    {project.title}
-  </a>
-  {project.link && (
-    <a
-      href={project.link}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors" />
-    </a>
-  )}
-</div>
-
-                  <p className="text-gray-400 text-sm">{project.desc}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, techIndex) => (
-                      <span key={techIndex} className="px-3 py-1 rounded-full bg-purple-900/30 text-purple-300 text-xs">
-                        {tech}
-                      </span>
-                    ))}
+            ].map((project, index) =>
+              project.link ? (
+                <a
+                  key={index}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group"
+                >
+                  <Card className="p-6 bg-gradient-to-br from-purple-900/20 to-cyan-900/20 backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer">
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-start">
+                        <h3 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                          {project.title}
+                        </h3>
+                        <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors" />
+                      </div>
+                      <p className="text-gray-400 text-sm">{project.desc}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map((tech, techIndex) => (
+                          <span key={techIndex} className="px-3 py-1 rounded-full bg-purple-900/30 text-purple-300 text-xs">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </Card>
+                </a>
+              ) : (
+                <Card
+                  key={index}
+                  className="p-6 bg-gradient-to-br from-purple-900/20 to-cyan-900/20 backdrop-blur-sm border border-purple-500/20"
+                >
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                    <p className="text-gray-400 text-sm">{project.desc}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, techIndex) => (
+                        <span key={techIndex} className="px-3 py-1 rounded-full bg-purple-900/30 text-purple-300 text-xs">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              )
+            )}
           </div>
         </div>
       </section>
