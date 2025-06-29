@@ -173,7 +173,7 @@ experience working with cloud platforms (Vercel, Firebase, Railway).
                   <div className="text-sm text-gray-400">Projects</div>
                 </div>
                 <div className="p-4 rounded-xl bg-cyan-900/20 backdrop-blur-sm border border-cyan-500/20 text-center">
-                  <div className="text-2xl font-bold text-cyan-400">1+</div>
+                  <div className="text-2xl font-bold text-cyan-400">2+</div>
                   <div className="text-sm text-gray-400">Years</div>
                 </div>
               </div>
