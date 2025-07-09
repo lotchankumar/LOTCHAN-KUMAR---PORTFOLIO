@@ -12,7 +12,9 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Lotchan Kumar - Futuristic Portfolio",
   description: "Full-Stack Developer | AI-Augmented Engineer | Product-Minded Builder",
-    
+  icons: {
+    icon: "/lotchan.jpeg", // 👈 This is how you add favicon in App Router
+  },
 }
 
 export default function RootLayout({
