@@ -1,40 +1,102 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { ChevronDown, Github, Linkedin, Mail,Phone, ExternalLink, Code, Zap, Cpu, Rocket, Database, Cloud, Server, EllipsisIcon, PhoneCall } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import { useState, useEffect } from "react";
+import {
+  ChevronDown,
+  Github,
+  Linkedin,
+  Mail,
+  PhoneCall,
+  ExternalLink,
+  Code,
+  Zap,
+  Cpu,
+  Rocket,
+  Database,
+  Cloud,
+  Server,
+  EllipsisIcon,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function FuturisticPortfolio() {
-  const [typedText, setTypedText] = useState("")
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const titles = ["Full-Stack Developer | AI-Augmented Engineer | Product-Minded Builder"]
-  const [titleIndex, setTitleIndex] = useState(0)
+  const [typedText, setTypedText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const titles = [
+    "Full-Stack Developer | AI-Augmented Engineer | Product-Minded Builder",
+  ];
+  const [titleIndex, setTitleIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
-
   useEffect(() => {
-    const currentTitle = titles[titleIndex]
-
+    const currentTitle = titles[titleIndex];
     if (currentIndex < currentTitle.length) {
       const timeout = setTimeout(() => {
-        setTypedText(currentTitle.slice(0, currentIndex + 1))
-        setCurrentIndex(currentIndex + 1)
-      }, 100)
-      return () => clearTimeout(timeout)
+        setTypedText(currentTitle.slice(0, currentIndex + 1));
+        setCurrentIndex(currentIndex + 1);
+      }, 100);
+      return () => clearTimeout(timeout);
     } else {
       const timeout = setTimeout(() => {
-        setCurrentIndex(0)
-        setTypedText("")
-        setTitleIndex((prev) => (prev + 1) % titles.length)
-      }, 2000)
-      return () => clearTimeout(timeout)
+        setCurrentIndex(0);
+        setTypedText("");
+        setTitleIndex((prev) => (prev + 1) % titles.length);
+      }, 2000);
+      return () => clearTimeout(timeout);
     }
-  }, [currentIndex, titleIndex, titles])
+  }, [currentIndex, titleIndex, titles]);
 
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
-  }
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const projects = [
+    {
+      title: "Stunning Portfolio Website",
+      desc: "A futuristic developer portfolio website with dark mode, neon gradients, glassmorphism, typing effects, and smooth animations",
+      tech: ["Next.js", "Tailwind CSS","Typescript","Vercel","Git"],
+      link: "https://lotchan-kumar-portfolio.vercel.app/",
+      image: "/portfolio.png",
+    },
+    {
+      title: "A modern web platform",
+      desc: "A modern web platform for a mobile repair business that brings doorstep service to customers. Transforms traditional walk-in repairs into convenient on-demand service.",
+      tech: ["Next.js","React","Next API", "Typescript", "Tailwind CSS","Git","Vercel"],
+      link: "https://lotchan-mobile-service.vercel.app/",
+      image: "/mobileservice.png",
+    },
+    {
+      title: "Traditional Clinic Landing Page",
+      desc: "Transformed a traditional Tamil medical clinic advertisement into a sleek, professional web presence using modern full-stack technologies.",
+      tech: ["Next.js","React","Git", "Typescript", "Tailwind CSS", "Vercel"],
+      link: "https://prnv-treatment.vercel.app/",
+      image: "/prnv.png",
+    },
+    {
+      title: "To-Do-CRUD App",
+      desc: "To-Do App with CRUD functionality using React.js and TypeScript, demonstrating state management, props, events, and hooks.",
+      tech: ["React.js", "Typescript"],
+      link: "https://todo-crud-app-three.vercel.app/",
+      image: "/todo.png",
+    },
+    {
+      title: "Mobile Shop Daily Calculator",
+      desc: "Intelligent code completion and review tool",
+      tech: ["React","TypeScript", "Next", "Tailwind CSS"],
+      link:"https://daily-profit-tracker.vercel.app/",
+      image: "/tracker.png",
+    },
+    {
+      title: "Blockchain Voting",
+      desc: "Secure decentralized voting platform",
+      tech: ["Solidity", "Web3.js", "IPFS"],
+      image: "/projects/blockchain-vote.jpg",
+    },
+  ];
+
+  const displayedProjects = projects.slice(0, 5);
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
@@ -223,98 +285,76 @@ experience working with cloud platforms (Vercel, Firebase, Railway).
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="relative py-20 z-10">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-            Projects.db
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Stunning Portfolio Website",
-                desc: "A futuristic developer portfolio website with dark mode, neon gradients, glassmorphism, typing effects, and smooth animations",
-                tech: ["Next.js", "Tailwind CSS"],
-                link: "https://lotchan-kumar-portfolio.vercel.app/"
-              },
-              {
-                title: "Daily Profit Tracker",
-                desc: "Real-time mobile shop finance tracker with smart cash flow & division analytics",
-                tech: ["React.js", "Typescript", "Tailwind CSS", "Node.js"],
-                link: "https://daily-profit-tracker.vercel.app/"
-              },
-              {
-                title: "Modern Landing Page",
-                desc: "Landing page for an e-commerce mobile device store.",
-                tech: ["Next.js", "React", "Typescript","Tailwind CSS"],
-                link: "https://cell-corner-landing-page.vercel.app/"
-              },
-              {
-                title: "To-Do-CRUD App",
-                desc: "To-Do App with CRUD functionality using React.js and TypeScript, demonstrating state management, props, events, and hooks.",
-                tech: ["React.js", "Typescript",],
-                link: "https://todo-crud-app-three.vercel.app/"
-              },
-              {
-                title: "AI Code Assistant",
-                desc: "Intelligent code completion and review tool",
-                tech: ["TypeScript", "OpenAI", "VS Code API"],
-              },
-              {
-                title: "Blockchain Voting",
-                desc: "Secure decentralized voting platform",
-                tech: ["Solidity", "Web3.js", "IPFS"],
-              },
-            ].map((project, index) =>
-              project.link ? (
-                <a
-                  key={index}
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block group"
-                >
-                  <Card className="p-6 bg-gradient-to-br from-purple-900/20 to-cyan-900/20 backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer">
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-start">
-                        <h3 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
-                          {project.title}
-                        </h3>
-                        <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors" />
-                      </div>
-                      <p className="text-gray-400 text-sm">{project.desc}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tech.map((tech, techIndex) => (
-                          <span key={techIndex} className="px-3 py-1 rounded-full bg-purple-900/30 text-purple-300 text-xs">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </Card>
-                </a>
-              ) : (
-                <Card
-                  key={index}
-                  className="p-6 bg-gradient-to-br from-purple-900/20 to-cyan-900/20 backdrop-blur-sm border border-purple-500/20"
-                >
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                    <p className="text-gray-400 text-sm">{project.desc}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, techIndex) => (
-                        <span key={techIndex} className="px-3 py-1 rounded-full bg-purple-900/30 text-purple-300 text-xs">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </Card>
-              )
-            )}
-          </div>
-        </div>
-      </section>
+       {/* Projects Section */}
+<section id="projects" className="relative py-20 z-10">
+  <div className="max-w-6xl mx-auto px-6">
+    <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+      Projects.db
+    </h2>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {displayedProjects.map((project, index) => (
+        <a
+          key={index}
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block group"
+        >
+          <Card className=" p-4 bg-gradient-to-br from-purple-900/20 to-cyan-900/20 backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:scale-105 cursor-pointer">
+            <div className="space-y-4 h-full flex flex-col">
+              {project.image && (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="rounded-xl w-full h-40 object-cover border border-purple-600/30 group-hover:shadow-lg transition"
+                />
+              )}
+
+              <div className="flex justify-between items-start">
+                <h3 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                  {project.title}
+                </h3>
+                <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors" />
+              </div>
+
+              <p className="text-gray-400 text-sm flex-grow">{project.desc}</p>
+
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {project.tech.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="px-3 py-1 rounded-full bg-purple-900/30 text-purple-300 text-xs"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </Card>
+        </a>
+      ))}
+
+      {/* See More Projects Card */}
+      {projects.length > 5 && (
+        <Link href="/projects" className="block group">
+          <Card className="h-[400px] p-4 flex flex-col items-center justify-center text-center bg-gradient-to-br from-purple-900/20 to-cyan-900/20 backdrop-blur-sm border-2 border-dashed border-purple-500/30 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 cursor-pointer">
+            <div>
+              <h3 className="text-xl font-bold text-purple-300 group-hover:text-purple-400 mb-2">
+                See More Projects
+              </h3>
+              <p className="text-gray-400 text-sm max-w-xs mx-auto">
+                Explore the complete list of all my projects in detail.
+              </p>
+            </div>
+          </Card>
+        </Link>
+      )}
+    </div>
+  </div>
+</section>
+
+
 
       {/* Contact Section */}
       <section id="contact" className="relative py-20 z-10">
@@ -365,5 +405,5 @@ experience working with cloud platforms (Vercel, Firebase, Railway).
         </div>
       </footer>
     </div>
-  )
+  );
 }
