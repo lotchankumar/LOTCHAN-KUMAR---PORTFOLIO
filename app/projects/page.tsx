@@ -35,10 +35,17 @@ const projects = [
   },
   {
     title: "Mobile Shop Daily Calculator",
-    desc: "Intelligent code completion and review tool",
+    desc: "A simple web app to track daily profits for your mobile shop across 3 business areas.",
     tech: ["React", "TypeScript", "Next", "Tailwind CSS"],
     link: "https://daily-profit-tracker.vercel.app/",
     image: "/tracker.png",
+  },
+    {
+    title: "Portfolio Website",
+    desc: "A modern, fully responsive portfolio website showcasing your skills, projects, and contact information with smooth animations and professional design.",
+    tech: ["React", "JavaScript", "HTML","CSS", "Tailwind CSS","Lucide react"],
+    link: "https://lotchan-portfolio-react.vercel.app//",
+    image: "/po.png",
   },
 ]
 

@@ -255,7 +255,7 @@ experience working with cloud platforms (Vercel, Firebase, Railway).
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: Code, title: "Frontend", skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Chakra UI"] },
+              { icon: Code, title: "Frontend", skills: ["HTML", "CSS","Javascript","React.js", "Next.js", "TypeScript", "Tailwind CSS"] },
               { icon: Cpu, title: "Backend", skills: ["Node.js","Express.js", "Nest.js", "GraphQL", "REST APIs","Python"] },
               { icon: Database, title: "Database", skills: ["MongoDB", "PostgreSQL", "Firebase" ] },
               { icon: Server, title: "DevOps & Cloud", skills: ["GitHub", "Docker", "Vercel", "Railway", "Netlify" ] },
